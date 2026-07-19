@@ -1,0 +1,6 @@
+# Deadlock Safety Analyzer - khong can thu vien ngoai nao cho phan LOI.
+# banker_algorithm.py va data_loader.py chi dung thu vien chuan (stdlib).
+#
+# matplotlib chi can neu nhom muon lam THEM bieu do truc quan hoa
+# (vi du: bieu do Available/Need theo tung tien trinh) - khong bat buoc.
+matplotlib

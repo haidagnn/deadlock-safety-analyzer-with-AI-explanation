@@ -1,0 +1,129 @@
+{
+  "input_file": "data/sample_state.txt",
+  "is_safe": true,
+  "safe_sequence": [
+    "P1",
+    "P3",
+    "P0",
+    "P2",
+    "P4"
+  ],
+  "trace": [
+    {
+      "process": 1,
+      "need": [
+        1,
+        2,
+        2
+      ],
+      "work_before": [
+        3,
+        3,
+        2
+      ],
+      "allocation_returned": [
+        2,
+        0,
+        0
+      ],
+      "work_after": [
+        5,
+        3,
+        2
+      ]
+    },
+    {
+      "process": 3,
+      "need": [
+        0,
+        1,
+        1
+      ],
+      "work_before": [
+        5,
+        3,
+        2
+      ],
+      "allocation_returned": [
+        2,
+        1,
+        1
+      ],
+      "work_after": [
+        7,
+        4,
+        3
+      ]
+    },
+    {
+      "process": 0,
+      "need": [
+        7,
+        4,
+        3
+      ],
+      "work_before": [
+        7,
+        4,
+        3
+      ],
+      "allocation_returned": [
+        0,
+        1,
+        0
+      ],
+      "work_after": [
+        7,
+        5,
+        3
+      ]
+    },
+    {
+      "process": 2,
+      "need": [
+        6,
+        0,
+        0
+      ],
+      "work_before": [
+        7,
+        5,
+        3
+      ],
+      "allocation_returned": [
+        3,
+        0,
+        2
+      ],
+      "work_after": [
+        10,
+        5,
+        5
+      ]
+    },
+    {
+      "process": 4,
+      "need": [
+        4,
+        3,
+        1
+      ],
+      "work_before": [
+        10,
+        5,
+        5
+      ],
+      "allocation_returned": [
+        0,
+        0,
+        2
+      ],
+      "work_after": [
+        10,
+        5,
+        7
+      ]
+    }
+  ],
+  "explanation": "KET LUAN: He thong dang o trang thai AN TOAN (Safe State).\n\nBuoc 1: Chon tien trinh P1, vi Need[P1] = [1, 2, 2] <= Work hien tai = [3, 3, 2] (tren tung loai tai nguyen). Gia dinh P1 duoc cap du, chay xong va TRA LAI toan bo Allocation = [2, 0, 0] cho he thong -> Work moi = [5, 3, 2].\nBuoc 2: Chon tien trinh P3, vi Need[P3] = [0, 1, 1] <= Work hien tai = [5, 3, 2] (tren tung loai tai nguyen). Gia dinh P3 duoc cap du, chay xong va TRA LAI toan bo Allocation = [2, 1, 1] cho he thong -> Work moi = [7, 4, 3].\nBuoc 3: Chon tien trinh P0, vi Need[P0] = [7, 4, 3] <= Work hien tai = [7, 4, 3] (tren tung loai tai nguyen). Gia dinh P0 duoc cap du, chay xong va TRA LAI toan bo Allocation = [0, 1, 0] cho he thong -> Work moi = [7, 5, 3].\nBuoc 4: Chon tien trinh P2, vi Need[P2] = [6, 0, 0] <= Work hien tai = [7, 5, 3] (tren tung loai tai nguyen). Gia dinh P2 duoc cap du, chay xong va TRA LAI toan bo Allocation = [3, 0, 2] cho he thong -> Work moi = [10, 5, 5].\nBuoc 5: Chon tien trinh P4, vi Need[P4] = [4, 3, 1] <= Work hien tai = [10, 5, 5] (tren tung loai tai nguyen). Gia dinh P4 duoc cap du, chay xong va TRA LAI toan bo Allocation = [0, 0, 2] cho he thong -> Work moi = [10, 5, 7].\n\nSafe Sequence tim duoc: <P1 -> P3 -> P0 -> P2 -> P4>.\nLuu y quan trong: mot he thong an toan co the ton tai NHIEU Safe Sequence khac nhau, tuy thu tu chon tien trinh trong so cac tien trinh dang thoa dieu kien Need <= Work o moi buoc. Chi can TIM RA duoc it nhat MOT chuoi la du de ket luan he thong an toan; khong nhat thiet phai trung 100% voi chuoi tinh tay trong tai lieu."
+}

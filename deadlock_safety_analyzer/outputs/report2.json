@@ -1,0 +1,100 @@
+{
+  "input_file": "data/vidu2.txt",
+  "is_safe": false,
+  "safe_sequence": [],
+  "trace": [
+    {
+      "process": 3,
+      "need": [
+        0,
+        1,
+        1
+      ],
+      "work_before": [
+        2,
+        2,
+        1
+      ],
+      "allocation_returned": [
+        2,
+        1,
+        1
+      ],
+      "work_after": [
+        4,
+        3,
+        2
+      ]
+    },
+    {
+      "process": 1,
+      "need": [
+        1,
+        2,
+        2
+      ],
+      "work_before": [
+        4,
+        3,
+        2
+      ],
+      "allocation_returned": [
+        2,
+        0,
+        0
+      ],
+      "work_after": [
+        6,
+        3,
+        2
+      ]
+    },
+    {
+      "process": 2,
+      "need": [
+        6,
+        0,
+        0
+      ],
+      "work_before": [
+        6,
+        3,
+        2
+      ],
+      "allocation_returned": [
+        3,
+        0,
+        2
+      ],
+      "work_after": [
+        9,
+        3,
+        4
+      ]
+    },
+    {
+      "process": 4,
+      "need": [
+        4,
+        3,
+        1
+      ],
+      "work_before": [
+        9,
+        3,
+        4
+      ],
+      "allocation_returned": [
+        0,
+        0,
+        2
+      ],
+      "work_after": [
+        9,
+        3,
+        6
+      ]
+    }
+  ],
+  "explanation": "KET LUAN: He thong dang o trang thai KHONG AN TOAN (Unsafe State).\nKhong con tien trinh nao co Need <= Work de tiep tuc gia dinh chay -> he thong CO NGUY CO xay ra Deadlock (chua chac chan Deadlock da xay ra ngay, nhung khong con cach nao dam bao moi tien trinh deu hoan thanh)."
+}
