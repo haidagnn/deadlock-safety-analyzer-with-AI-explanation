@@ -1,25 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-ai_explainer.py
-----------------
-Sinh giai thich bang ngon ngu tu nhien (tieng Viet) tu 'trace' do
-banker_algorithm.safety_algorithm() tra ve. Day la phan ung voi chu
-"AI Explanation" trong ten de tai.
-
-Co 2 muc do trien khai, tang dan theo do kho - nhom 3 nguoi co the chia
-lam mien mo rong theo tung nguoi:
-
-  1. explain_rule_based()  (BAT BUOC, khong can API key, khong ton phi)
-     Tu dong "dien cau" tu du lieu so sang cau van tieng Viet. Day la
-     phan toi thieu de bao ve duoc de tai.
-
-  2. explain_with_llm()    (TUY CHON, diem cong / mo rong)
-     Goi mot API mo hinh ngon ngu (vi du Anthropic Claude) de viet lai
-     doan giai thich cho tu nhien, sinh dong hon. Neu khong co API key
-     hoac goi mang that bai, ham se TU DONG fallback ve ban rule-based
-     de dam bao chuong trinh khong bao gio crash vi ly do mang.
-"""
-
 
 def explain_rule_based(trace, is_safe):
     lines = []
@@ -63,14 +42,7 @@ def explain_rule_based(trace, is_safe):
 
 
 def explain_with_llm(trace, is_safe, api_key=None, model="claude-sonnet-4-6"):
-    """
-    Khung goi y de goi API mo hinh ngon ngu, viet lai phan giai thich cho
-    tu nhien hon. KHONG bat buoc cho BTL co ban - chi la phan mo rong.
-
-    Cach dung:
-        export ANTHROPIC_API_KEY=sk-...
-        explain_with_llm(trace, is_safe, api_key=os.environ.get("ANTHROPIC_API_KEY"))
-    """
+   
     if not api_key:
         return explain_rule_based(trace, is_safe)
 
